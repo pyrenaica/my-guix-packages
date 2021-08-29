@@ -86,7 +86,6 @@
 						 (string-append (getcwd) "/build/lib:"
 								(getenv "PYTHONPATH")))
 					 (invoke "python" "-m" "pytest")
-					 ;; (invoke "pytest" "-p" "no:logging")
 					 #t)))))
    (home-page "https://github.com/mautrix/python")
    (synopsis "A Python 3 asyncio Matrix framework.")
