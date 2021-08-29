@@ -1,4 +1,4 @@
-(define-module (python-maubot)
+(define-module (my-python-maubot)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
@@ -38,9 +38,9 @@
       ("python-colorama" ,python-colorama)
       ("python-commonmark" ,python-commonmark)
       ("python-jinja2" ,python-jinja2)
-      ("python-mautrix" ,python-mautrix)
+      ("my-python-mautrix" ,my-python-mautrix)
       ("python-packaging" ,python-packaging)
-      ("python-pyinquirer" ,python-pyinquirer)
+      ("my-python-pyinquirer" ,my-python-pyinquirer)
       ("python-ruamel.yaml" ,python-ruamel.yaml)
       ("python-sqlalchemy" ,python-sqlalchemy)
       ("python-yarl" ,python-yarl)))
@@ -64,9 +64,9 @@
    (license gpl3+)))
 
 
-(define-public python-mautrix
+(define-public my-python-mautrix
   (package
-   (name "python-mautrix")
+   (name "my-python-mautrix")
    (version "0.10.4")
    (source
     (origin
@@ -99,9 +99,9 @@
     "A Python 3 asyncio Matrix framework.")
    (license gpl3+)))
 
-(define-public python-pyinquirer
+(define-public my-python-pyinquirer
   (package
-   (name "python-pyinquirer")
+   (name "my-python-pyinquirer")
    (version "1.0.3")
    (source
     (origin
