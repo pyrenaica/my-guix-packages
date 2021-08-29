@@ -1,4 +1,4 @@
-(define-module (python-maubot)
+(define-module (my-python-maubot)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
@@ -17,7 +17,7 @@
   #:use-module (guix utils)
   #:use-module (guix licenses))
 
-(define-public python-maubot
+(define-public my-python-maubot
   (package
    (name "python-maubot")
    (version "0.1.2")
@@ -55,8 +55,8 @@
 						 (string-append (getcwd) "/build/lib:"
 								(getenv "PYTHONPATH")))
 					 ;; (invoke "python" "-m" "pytest")
-					 ;; (invoke "pytest" "-p" "no:logging")
-					 #t)))))
+					 (invoke "pytest" "-p" "no:logging")
+					 #T)))))
 
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
@@ -64,42 +64,42 @@
    (license gpl3+)))
 
 
-(define-public python-mautrix
-(package
- (name "python-mautrix")
- (version "0.10.4")
- (source
-  (origin
-   (method url-fetch)
-   (uri (pypi-uri "mautrix" version))
-   (sha256
-    (base32
-     "0sdq333895r7qvw40zgysw8msnjx5b0y9y08nhwra22nxcllxg7z"))))
- (build-system python-build-system)
- (propagated-inputs
-  `(("python-aiohttp" ,python-aiohttp)
-    ("python-attrs" ,python-attrs)
-    ("python-yarl" ,python-yarl)))
- (native-inputs
-  `(("python-pytest" ,python-pytest)))
- (arguments
-  `(#:phases (modify-phases %standard-phases
-			    (replace 'check
-				     (lambda _
-				       ;; Extend PYTHONPATH so the built package will be found.
-				       (setenv "PYTHONPATH"
-					       (string-append (getcwd) "/build/lib:"
-							      (getenv "PYTHONPATH")))
-				       (invoke "python" "-m" "pytest")
-				       ;; (invoke "pytest" "-p" "no:logging")
-				       #t)))))
- (home-page "https://github.com/mautrix/python")
- (synopsis "A Python 3 asyncio Matrix framework.")
- (description
-  "A Python 3 asyncio Matrix framework.")
- (license gpl3+)))
+(define-public my-python-mautrix
+  (package
+   (name "python-mautrix")
+   (version "0.10.4")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (pypi-uri "mautrix" version))
+     (sha256
+      (base32
+       "0sdq333895r7qvw40zgysw8msnjx5b0y9y08nhwra22nxcllxg7z"))))
+   (build-system python-build-system)
+   (propagated-inputs
+    `(("python-aiohttp" ,python-aiohttp)
+      ("python-attrs" ,python-attrs)
+      ("python-yarl" ,python-yarl)))
+   (native-inputs
+    `(("python-pytest" ,python-pytest)))
+   (arguments
+    `(#:phases (modify-phases %standard-phases
+			      (replace 'check
+				       (lambda _
+					 ;; Extend PYTHONPATH so the built package will be found.
+					 (setenv "PYTHONPATH"
+						 (string-append (getcwd) "/build/lib:"
+								(getenv "PYTHONPATH")))
+					 (invoke "python" "-m" "pytest")
+					 ;; (invoke "pytest" "-p" "no:logging")
+					 #t)))))
+   (home-page "https://github.com/mautrix/python")
+   (synopsis "A Python 3 asyncio Matrix framework.")
+   (description
+    "A Python 3 asyncio Matrix framework.")
+   (license gpl3+)))
 
-(define-public python-pyinquirer
+(define-public my-python-pyinquirer
   (package
    (name "python-pyinquirer")
    (version "1.0.3")
