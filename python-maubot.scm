@@ -1,4 +1,4 @@
-(define-module (my-python-maubot)
+(define-module (python-maubot)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
@@ -17,7 +17,7 @@
   #:use-module (guix utils)
   #:use-module (guix licenses))
 
-(define-public my-python-maubot
+(define-public python-maubot
   (package
    (name "python-maubot")
    (version "0.1.2")
@@ -38,12 +38,14 @@
       ("python-colorama" ,python-colorama)
       ("python-commonmark" ,python-commonmark)
       ("python-jinja2" ,python-jinja2)
-      ("my-python-mautrix" ,my-python-mautrix)
+      ("python-mautrix" ,python-mautrix)
       ("python-packaging" ,python-packaging)
-      ("my-python-pyinquirer" ,my-python-pyinquirer)
+      ("python-pyinquirer" ,python-pyinquirer)
       ("python-ruamel.yaml" ,python-ruamel.yaml)
       ("python-sqlalchemy" ,python-sqlalchemy)
       ("python-yarl" ,python-yarl)))
+   (native-inputs
+    `(("python-pytest" ,python-pytest)))
    (arguments
     `(#:phases (modify-phases %standard-phases
 			      (replace 'check
@@ -52,14 +54,17 @@
 					 (setenv "PYTHONPATH"
 						 (string-append (getcwd) "/build/lib:"
 								(getenv "PYTHONPATH")))
+					 ;; (invoke "python" "-m" "pytest")
+					 ;; (invoke "pytest" "-p" "no:logging")
 					 #t)))))
+
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
    (description "A plugin-based Matrix bot system.")
    (license gpl3+)))
 
 
-(define-public my-python-mautrix
+(define-public python-mautrix
   (package
    (name "python-mautrix")
    (version "0.10.4")
@@ -86,6 +91,7 @@
 						 (string-append (getcwd) "/build/lib:"
 								(getenv "PYTHONPATH")))
 					 (invoke "python" "-m" "pytest")
+					 ;; (invoke "pytest" "-p" "no:logging")
 					 #t)))))
    (home-page "https://github.com/mautrix/python")
    (synopsis "A Python 3 asyncio Matrix framework.")
@@ -93,7 +99,7 @@
     "A Python 3 asyncio Matrix framework.")
    (license gpl3+)))
 
-(define-public my-python-pyinquirer
+(define-public python-pyinquirer
   (package
    (name "python-pyinquirer")
    (version "1.0.3")
@@ -117,3 +123,4 @@
    (description
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
+
