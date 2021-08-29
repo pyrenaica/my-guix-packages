@@ -19,7 +19,7 @@
 
 (define-public my-python-maubot
   (package
-   (name "python-maubot")
+   (name "my-python-maubot")
    (version "0.1.2")
    (source
     (origin
