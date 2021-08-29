@@ -38,16 +38,13 @@
       ("python-colorama" ,python-colorama)
       ("python-commonmark" ,python-commonmark)
       ("python-jinja2" ,python-jinja2)
-      ("python-mautrix" ,python-mautrix)
+      ("my-python-mautrix" ,my-python-mautrix)
       ("python-packaging" ,python-packaging)
-      ("python-pyinquirer" ,python-pyinquirer)
+      ("my-python-pyinquirer" ,my-python-pyinquirer)
       ("python-ruamel.yaml" ,python-ruamel.yaml)
       ("python-sqlalchemy" ,python-sqlalchemy)
       ("python-yarl" ,python-yarl)))
-   (native-inputs
-    `(("python-pytest" ,python-pytest)))
    (arguments
-    
     `(#:phases (modify-phases %standard-phases
 			      (replace 'check
 				       (lambda _
@@ -55,10 +52,7 @@
 					 (setenv "PYTHONPATH"
 						 (string-append (getcwd) "/build/lib:"
 								(getenv "PYTHONPATH")))
-					 ;; (invoke "python" "-m" "pytest")
-					 ;; (invoke "pytest" "-p" "no:logging")
 					 #t)))))
-
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
    (description "A plugin-based Matrix bot system.")
@@ -84,17 +78,16 @@
    (native-inputs
     `(("python-pytest" ,python-pytest)))
    (arguments
-    `(#:tests? #f))
-   ;; `(#:phases (modify-phases %standard-phases
-   ;; (replace 'check
-   ;; (lambda _
-   ;; Extend PYTHONPATH so the built package will be found.
-   ;; (setenv "PYTHONPATH"
-   ;; (string-append (getcwd) "/build/lib:"
-   ;; (getenv "PYTHONPATH")))
-   ;; (invoke "python" "-m" "pytest")
-   ;; (invoke "pytest" "-p" "no:logging")
-   ;; #t)))))
+    `(#:phases (modify-phases %standard-phases
+			      (replace 'check
+				       (lambda _
+					 ;; Extend PYTHONPATH so the built package will be found.
+					 (setenv "PYTHONPATH"
+						 (string-append (getcwd) "/build/lib:"
+								(getenv "PYTHONPATH")))
+					 (invoke "python" "-m" "pytest")
+					 ;; (invoke "pytest" "-p" "no:logging")
+					 #t)))))
    (home-page "https://github.com/mautrix/python")
    (synopsis "A Python 3 asyncio Matrix framework.")
    (description
@@ -125,3 +118,6 @@
    (description
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
+
+
+my-python-maubot
