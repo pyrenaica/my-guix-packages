@@ -17,7 +17,7 @@
   #:use-module (guix utils)
   #:use-module (guix licenses))
 
-(define-public python-maubot
+(define-public my-python-maubot
   (package
    (name "python-maubot")
    (version "0.1.2")
