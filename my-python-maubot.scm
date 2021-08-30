@@ -31,6 +31,8 @@
    (build-system python-build-system)
    (propagated-inputs
     `(("python-aiohttp" ,python-aiohttp)
+      ("python" ,python)
+      ("python-pytest" ,python-pytest)
       ("python-alembic" ,python-alembic)
       ("python-attrs" ,python-attrs)
       ("python-bcrypt" ,python-bcrypt)
@@ -44,20 +46,20 @@
       ("python-ruamel.yaml" ,python-ruamel.yaml)
       ("python-sqlalchemy" ,python-sqlalchemy)
       ("python-yarl" ,python-yarl)))
-   (native-inputs
-    `(("python-pytest" ,python-pytest)))
+   ;; (native-inputs
+   ;; `(("python-pytest" ,python-pytest)))
    (arguments
-    `(#:tests? #f))
-   ;; `(#:phases (modify-phases %standard-phases
-   ;; 			      (replace 'check
-   ;; 				       (lambda _
-   ;; 					 ;; Extend PYTHONPATH so the built package will be found.
-   ;; 					 (setenv "PYTHONPATH"
-   ;; 						 (string-append (getcwd) "/build/lib:"
-   ;; 								(getenv "PYTHONPATH")))
-   ;; 					 ;; (invoke "python" "-m" "pytest")
-   ;; 					 ;; (invoke "pytest" "-p" "no:logging")
-   ;; 					 #t)))))
+    ;; `(#:tests? #f))
+    `(#:phases (modify-phases %standard-phases
+			      (replace 'check
+				       (lambda _
+					 ;; 					 ;; Extend PYTHONPATH so the built package will be found.
+					 (setenv "PYTHONPATH"
+						 (string-append (getcwd) "/build/lib:"
+								(getenv "PYTHONPATH")))
+					 ;; (invoke "python" "-m" "pytest")
+					 ;; (invoke "pytest" "-p" "no:logging")
+					 #t)))))
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
    (description "A plugin-based Matrix bot system.")
