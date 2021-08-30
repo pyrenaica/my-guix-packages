@@ -47,17 +47,17 @@
    (native-inputs
     `(("python-pytest" ,python-pytest)))
    (arguments
-    `(#:phases (modify-phases %standard-phases
-			      (replace 'check
-				       (lambda _
-					 ;; Extend PYTHONPATH so the built package will be found.
-					 (setenv "PYTHONPATH"
-						 (string-append (getcwd) "/build/lib:"
-								(getenv "PYTHONPATH")))
-					 ;; (invoke "python" "-m" "pytest")
-					 ;; (invoke "pytest" "-p" "no:logging")
-					 #t)))))
-
+    `(#:tests? #f))
+   ;; `(#:phases (modify-phases %standard-phases
+   ;; 			      (replace 'check
+   ;; 				       (lambda _
+   ;; 					 ;; Extend PYTHONPATH so the built package will be found.
+   ;; 					 (setenv "PYTHONPATH"
+   ;; 						 (string-append (getcwd) "/build/lib:"
+   ;; 								(getenv "PYTHONPATH")))
+   ;; 					 ;; (invoke "python" "-m" "pytest")
+   ;; 					 ;; (invoke "pytest" "-p" "no:logging")
+   ;; 					 #t)))))
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
    (description "A plugin-based Matrix bot system.")
