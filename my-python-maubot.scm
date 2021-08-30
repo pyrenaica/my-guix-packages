@@ -125,5 +125,3 @@
    (description
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
-
-my-python-mautrix
