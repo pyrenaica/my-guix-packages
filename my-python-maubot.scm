@@ -69,14 +69,14 @@
 (define-public my-python-mautrix
   (package
    (name "my-python-mautrix")
-   (version "0.10.4")
+   (version "0.9.9")
    (source
     (origin
      (method url-fetch)
      (uri (pypi-uri "mautrix" version))
      (sha256
       (base32
-       "0sdq333895r7qvw40zgysw8msnjx5b0y9y08nhwra22nxcllxg7z"))))
+       "0assa5cx5gx87l8r3gwyyziggrz0dbqazn2hn4j1gw9jn9m9kwjp"))))
    (build-system python-build-system)
    (propagated-inputs
     `(("python-aiohttp" ,python-aiohttp)
@@ -126,3 +126,4 @@
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
 
+my-python-mautrix
