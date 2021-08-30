@@ -114,7 +114,7 @@
        "0lgfdlv0vabbhfzmrgqiq9fkwxz9v67w023rda4bszvjsxl2vaf9"))))
    (build-system python-build-system)
    (propagated-inputs
-    `(("python-prompt-toolkit" ,python-prompt-toolkit)
+    `(("my-python-prompt-toolkit-1" ,my-python-prompt-toolkit-1)
       ("python-pygments" ,python-pygments)
       ("python-regex" ,python-regex)))
    (arguments
@@ -128,6 +128,7 @@
 
 (define-public my-python-prompt-toolkit-1
   (package (inherit python-prompt-toolkit-2)
+	   (name "my-python-prompt-toolkit-1")
 	   (version "1.0.14")
 	   (source
 	    (origin
