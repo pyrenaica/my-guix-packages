@@ -125,3 +125,18 @@
    (description
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
+
+(define-public my-python-prompt-toolkit-1
+  (package (inherit python-prompt-toolkit-2)
+	   (version "1.0.14")
+	   (source
+	    (origin
+	     (method url-fetch)
+	     (uri (pypi-uri "prompt_toolkit" version ".tar.gz"))
+	     (sha256
+              (base32
+	       "0bv249ni511lqwjbg6yrvxnv0h76axfx3wnrflb045sb3cxl2rnc"))))))
+
+(define-public my-python2-prompt-toolkit-1
+  (package-with-python2 my-python-prompt-toolkit-1))
+
