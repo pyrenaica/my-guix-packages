@@ -35,6 +35,3 @@
     (synopsis "Python API client for Discogs")
     (description "Python API client for Discogs")
     (license expat)))
-
-
-ls-beets-discogs
