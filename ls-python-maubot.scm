@@ -1,4 +1,4 @@
-(define-module (ls/python-maubot)
+(define-module (ls-python-maubot)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
