@@ -17,9 +17,9 @@
   #:use-module (guix utils)
   #:use-module (guix licenses))
 
-(define-public my-python-maubot
+(define-public ls-python-maubot
   (package
-   (name "my-python-maubot")
+   (name "ls-python-maubot")
    (version "0.1.2")
    (source
     (origin
@@ -40,9 +40,9 @@
       ("python-colorama" ,python-colorama)
       ("python-commonmark" ,python-commonmark)
       ("python-jinja2" ,python-jinja2)
-      ("my-python-mautrix" ,my-python-mautrix)
+      ("ls-python-mautrix" ,ls-python-mautrix)
       ("python-packaging" ,python-packaging)
-      ("my-python-pyinquirer" ,my-python-pyinquirer)
+      ("ls-python-pyinquirer" ,ls-python-pyinquirer)
       ("python-ruamel.yaml" ,python-ruamel.yaml)
       ("python-sqlalchemy" ,python-sqlalchemy)
       ("python-yarl" ,python-yarl)))
@@ -66,9 +66,9 @@
    (license gpl3+)))
 
 
-(define-public my-python-mautrix
+(define-public ls-python-mautrix
   (package
-   (name "my-python-mautrix")
+   (name "ls-python-mautrix")
    (version "0.9.9")
    (source
     (origin
@@ -101,9 +101,9 @@
     "A Python 3 asyncio Matrix framework.")
    (license gpl3+)))
 
-(define-public my-python-pyinquirer
+(define-public ls-python-pyinquirer
   (package
-   (name "my-python-pyinquirer")
+   (name "ls-python-pyinquirer")
    (version "1.0.3")
    (source
     (origin
@@ -114,7 +114,7 @@
        "0lgfdlv0vabbhfzmrgqiq9fkwxz9v67w023rda4bszvjsxl2vaf9"))))
    (build-system python-build-system)
    (propagated-inputs
-    `(("my-python-prompt-toolkit-1" ,my-python-prompt-toolkit-1)
+    `(("ls-python-prompt-toolkit-1" ,ls-python-prompt-toolkit-1)
       ("python-pygments" ,python-pygments)
       ("python-regex" ,python-regex)))
    (arguments
@@ -126,9 +126,9 @@
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (license expat)))
 
-(define-public my-python-prompt-toolkit-1
+(define-public ls-python-prompt-toolkit-1
   (package (inherit python-prompt-toolkit-2)
-	   (name "my-python-prompt-toolkit-1")
+	   (name "ls-python-prompt-toolkit-1")
 	   (version "1.0.14")
 	   (source
 	    (origin
@@ -138,6 +138,6 @@
               (base32
 	       "0bv249ni511lqwjbg6yrvxnv0h76axfx3wnrflb045sb3cxl2rnc"))))))
 
-(define-public my-python2-prompt-toolkit-1
-  (package-with-python2 my-python-prompt-toolkit-1))
+(define-public ls-python2-prompt-toolkit-1
+  (package-with-python2 ls-python-prompt-toolkit-1))
 
