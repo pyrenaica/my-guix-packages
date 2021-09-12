@@ -1,4 +1,4 @@
-(define-module (ls-beets-plugins)
+(define-module (ls-beets-discogs)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
