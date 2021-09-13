@@ -10,7 +10,8 @@
   #:use-module (guix build-system python)
   #:use-module (guix download)
   #:use-module (guix utils)
-  #:use-module (guix licenses))
+  #:use-module ((guix licenses) #:prefix license:))
+
 
 
 
@@ -34,4 +35,4 @@
       "https://github.com/joalla/discogs_client")
     (synopsis "Python API client for Discogs")
     (description "Python API client for Discogs")
-    (license expat)))
+    (license license:expat)))

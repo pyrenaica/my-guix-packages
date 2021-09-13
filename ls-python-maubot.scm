@@ -15,7 +15,7 @@
   #:use-module (guix build-system python)
   #:use-module (guix download)
   #:use-module (guix utils)
-  #:use-module (guix licenses))
+  #:use-module ((guix licenses) #:prefix license:))
 
 (define-public ls-python-maubot
   (package
@@ -63,7 +63,7 @@
    (home-page "https://github.com/maubot/maubot")
    (synopsis "A plugin-based Matrix bot system.")
    (description "A plugin-based Matrix bot system.")
-   (license gpl3+)))
+   (license license:gpl3+)))
 
 
 (define-public ls-python-mautrix
@@ -99,7 +99,7 @@
    (synopsis "A Python 3 asyncio Matrix framework.")
    (description
     "A Python 3 asyncio Matrix framework.")
-   (license gpl3+)))
+   (license license:gpl3+)))
 
 (define-public ls-python-pyinquirer
   (package
@@ -124,7 +124,7 @@
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
    (description
     "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js")
-   (license expat)))
+   (license license:expat)))
 
 (define-public ls-python-prompt-toolkit-1
   (package (inherit python-prompt-toolkit-2)
