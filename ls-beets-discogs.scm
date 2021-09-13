@@ -79,5 +79,3 @@ Beetcamp is an up-to-date fork of beets-bandcamp")
     (description
       "ISO country, subdivision, language, currency and script definitions and their translations")
     (license license:lgpl2.1+)))
-
-ls-python-beetcamp
