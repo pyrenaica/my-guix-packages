@@ -50,9 +50,8 @@
             "17x2h8v9pjq1q124x9rlvarbi7yn5lh3621dzsh4h2m6ml71p2zg"))))
     (build-system python-build-system)
     (propagated-inputs
-      `(("python-cached-property"
-         ,python-cached-property)
-        ("python-pycountry" ,python-pycountry)
+      `(("python-cached-property" ,python-cached-property)
+        ("ls-python-pycountry" ,ls-python-pycountry)
         ("python-requests" ,python-requests)))
     (home-page "https://github.com/snejus/beetcamp")
     (synopsis
@@ -62,3 +61,23 @@
 Beetcamp is an up-to-date fork of beets-bandcamp")
     (license license:gpl2+)))
 
+(define-public ls-python-pycountry
+  (package
+    (name "ls-python-pycountry")
+    (version "20.7.3")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (pypi-uri "pycountry" version))
+        (sha256
+          (base32
+            "0hnbabsmqimx5hqh0jbd2f64i8fhzhhbrvid57048hs5sd9ll241"))))
+    (build-system python-build-system)
+    (home-page "")
+    (synopsis
+      "ISO country, subdivision, language, currency and script definitions and their translations")
+    (description
+      "ISO country, subdivision, language, currency and script definitions and their translations")
+    (license license:lgpl2.1+)))
+
+ls-python-beetcamp
