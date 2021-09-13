@@ -36,3 +36,29 @@
     (synopsis "Python API client for Discogs")
     (description "Python API client for Discogs")
     (license license:expat)))
+
+(define-public ls-python-beetcamp
+  (package
+    (name "ls-python-beetcamp")
+    (version "0.10.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (pypi-uri "beetcamp" version))
+        (sha256
+          (base32
+            "17x2h8v9pjq1q124x9rlvarbi7yn5lh3621dzsh4h2m6ml71p2zg"))))
+    (build-system python-build-system)
+    (propagated-inputs
+      `(("python-cached-property"
+         ,python-cached-property)
+        ("python-pycountry" ,python-pycountry)
+        ("python-requests" ,python-requests)))
+    (home-page "https://github.com/snejus/beetcamp")
+    (synopsis
+      "Bandcamp autotagger source for beets (http://beets.io).")
+    (description
+     "Bandcamp autotagger source for beets (http://beets.io).
+Beetcamp is an up-to-date fork of beets-bandcamp")
+    (license license:gpl2+)))
+
