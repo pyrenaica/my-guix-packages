@@ -69,14 +69,14 @@
 (define-public ls-python-mautrix
   (package
    (name "ls-python-mautrix")
-   (version "0.9.9")
+   (version "0.10.10")
    (source
     (origin
      (method url-fetch)
      (uri (pypi-uri "mautrix" version))
      (sha256
       (base32
-       "0assa5cx5gx87l8r3gwyyziggrz0dbqazn2hn4j1gw9jn9m9kwjp"))))
+       "02acj8wll3q43lnvhqrrafx121dfkg5zlg52038cxq9g7419fc3q"))))
    (build-system python-build-system)
    (propagated-inputs
     `(("python-aiohttp" ,python-aiohttp)
