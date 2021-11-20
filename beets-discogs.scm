@@ -1,4 +1,4 @@
-(define-module (ls-beets-discogs)
+(define-module (beets-discogs)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
@@ -12,9 +12,9 @@
   #:use-module (guix utils)
   #:use-module ((guix licenses) #:prefix license:))
 
-(define-public ls-beets-discogs
+(define-public beets-discogs
   (package
-    (name "ls-beets-discogs")
+    (name "beets-discogs")
     (version "2.3.12")
     (source
       (origin
@@ -34,9 +34,9 @@
     (description "Python API client for Discogs")
     (license license:expat)))
 
-(define-public ls-python-beetcamp
+(define-public python-beetcamp
   (package
-    (name "ls-python-beetcamp")
+    (name "python-beetcamp")
     (version "0.10.1")
     (source
       (origin
@@ -48,7 +48,7 @@
     (build-system python-build-system)
     (propagated-inputs
       `(("python-cached-property" ,python-cached-property)
-        ("ls-python-pycountry" ,ls-python-pycountry)
+        ("python-pycountry" ,python-pycountry)
         ("python-requests" ,python-requests)))
     (home-page "https://github.com/snejus/beetcamp")
     (synopsis
@@ -58,9 +58,9 @@
 Beetcamp is an up-to-date fork of beets-bandcamp")
     (license license:gpl2+)))
 
-(define-public ls-python-pycountry
+(define-public python-pycountry
   (package
-    (name "ls-python-pycountry")
+    (name "python-pycountry")
     (version "20.7.3")
     (source
       (origin
