@@ -1,4 +1,4 @@
-(define-module (python-maubot)
+(define-module (python-pyinputplus)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
