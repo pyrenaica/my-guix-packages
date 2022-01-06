@@ -43,8 +43,6 @@ stdio terminal and displaying a **** mask, which getpass cannot do.")
      (sha256
       (base32 "06dapa53pjyjbrfafay0l25ni88sbjys0flgcm04rb8prayj8pb4"))))
    (build-system python-build-system)
-   ;; (native-inputs
-   ;; (list python-pytest python-tox python-setuptools))
    (arguments
     `(#:tests? #f))
    (home-page "https://github.com/asweigart/pysimplevalidate")
@@ -75,3 +73,5 @@ suitable for use in other Python 2 and 3 applications.")
     "This package provides more featureful versions of input() and raw_input().")
    (license license:bsd-3)))
 
+
+python-pyinputplus
