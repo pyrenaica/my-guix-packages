@@ -73,5 +73,3 @@ suitable for use in other Python 2 and 3 applications.")
     "This package provides more featureful versions of input() and raw_input().")
    (license license:bsd-3)))
 
-
-python-pyinputplus
