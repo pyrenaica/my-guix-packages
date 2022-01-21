@@ -3,6 +3,7 @@
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-build)
   #:use-module (gnu packages python-check)
+  #:use-module (gnu packages compression)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix build-system python)
@@ -73,3 +74,19 @@ suitable for use in other Python 2 and 3 applications.")
     "This package provides more featureful versions of input() and raw_input().")
    (license license:bsd-3)))
 
+(define-public python-hashid
+  (package
+   (name "python-hashid")
+   (version "3.1.4")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (pypi-uri "hashID" version ".zip"))
+     (sha256
+      (base32 "1iv3ylnli8b62m6jyh7w5qqlk926dnwprwcqcbykjlg99167z3xg"))))
+   (build-system python-build-system)
+   (native-inputs (list unzip))
+   (home-page "https://github.com/psypanda/hashID")
+   (synopsis "Software to identify the different types of hashes")
+   (description "Software to identify the different types of hashes")
+   (license license:gpl3+)))
