@@ -1,0 +1,8 @@
+* Guix Packages
+
+I use this repo for some guix packages I need, mostly python packages, they
+aren't necessarily up to date.
+
+* TODO [%]
+- [ ] Put all python packages into 1 file.
+  
