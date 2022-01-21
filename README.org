@@ -3,6 +3,7 @@
 I use this repo for some guix packages I need, mostly python packages, they
 aren't necessarily up to date.
 
-* TODO [%]
+* TODO [50%]
 - [ ] Put all python packages into 1 file.
+- [X] Add README.org
   
